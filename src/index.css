@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "bold";
+  src: local("Gilroy-Bold"),
+    url("./assets/fonts/Gilroy-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "light";
+  src: local("Gilroy-Light"),
+    url("./assets/fonts/Gilroy-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "medium";
+  src: local("Gilroy-Medium"),
+    url("./assets/fonts/Gilroy-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "regular";
+  src: local("Gilroy-Regular"),
+    url("./assets/fonts/Gilroy-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "semibold";
+  src: local("Gilroy-SemiBold"),
+    url("./assets/fonts/Gilroy-SemiBold.ttf") format("truetype");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.odd-arrow {
+  transition-property: right;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.even-arrow {
+  rotate: 180deg;
+  transition-property: left;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.odd-image,
+.even-image {
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.odd-wrapper:hover .odd-image,
+.even-wrapper:hover .even-image {
+  transform: scale(1.1);
+}
+
+.odd-wrapper:hover .odd-arrow {
+  right: -1.8rem;
+}
+
+.even-wrapper:hover .even-arrow {
+  left: -1.8rem;
+}
