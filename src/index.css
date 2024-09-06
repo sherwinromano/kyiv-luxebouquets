@@ -36,6 +36,21 @@ html {
   scroll-behavior: smooth;
 }
 
+.service-image {
+  background: url("./assets/home-page/service-image-2.jpg") center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.hero-category {
+  background: url("./assets/category-page/hero-image.jpg") center no-repeat;
+  background-size: cover;
+}
+
+.category-item:nth-child(even) {
+  border-left: 1px solid black;
+}
+
 .odd-arrow {
   transition-property: right;
   transition-duration: 0.2s;

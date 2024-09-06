@@ -1,6 +1,6 @@
 import storeImage from "../../assets/home-page/store-image.jpg";
 import ContactForm from "../../components/Home/ContactForm";
-import SocialLinks from "../../components/Home/SocialLinks";
+import SocialLinks from "../../components/SocialLinks";
 
 const SectionFour = () => {
   return (

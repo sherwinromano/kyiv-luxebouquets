@@ -1,6 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import ContactForm from "./components/Home/ContactForm";
-import SocialLinks from "./components/Home/SocialLinks";
+import SocialLinks from "./components/SocialLinks";
 
 type NavLink = {
   link: string;
@@ -22,7 +22,7 @@ const Layout = () => {
           borderStyle: "border-r border-black",
         },
         {
-          link: "/",
+          link: "/category",
           name: "Contact",
           borderStyle: "border-r border-black",
         },
@@ -103,8 +103,8 @@ const Layout = () => {
             />
           </div>
         </div>
-        <div className="w-1/4 border-r border-black p-[2rem] flex flex-col justify-between gap-4">
-          <h5 className="font-[medium] text-[gray] text-[1.5rem]">Shop</h5>
+        <div className="w-1/4 border-r border-black p-[2rem] flex flex-col gap-4">
+          <h5 className="font-[medium] text-[gray] text-[1.3rem]">Shop</h5>
           <ul>
             <li className="font-[medium] text-[1.1rem]">All Products</li>
             <li className="font-[medium] text-[1.1rem]">Fresh Flowers</li>
@@ -114,7 +114,7 @@ const Layout = () => {
             <li className="font-[medium] text-[1.1rem]">Aroma Candles</li>
             <li className="font-[medium] text-[1.1rem]">Freshener Diffuser</li>
           </ul>
-          <h5 className="font-[medium] text-[gray] text-[1.5rem]">Service</h5>
+          <h5 className="font-[medium] text-[gray] text-[1.3rem]">Service</h5>
           <ul>
             <li className="font-[medium] text-[1.1rem]">Flower Subscription</li>
             <li className="font-[medium] text-[1.1rem]">
@@ -123,7 +123,7 @@ const Layout = () => {
           </ul>
         </div>
         <div className="w-1/4 p-[2rem] flex flex-col gap-4">
-          <h5 className="font-[medium] text-[gray] text-[1.5rem]">About Us</h5>
+          <h5 className="font-[medium] text-[gray] text-[1.3rem]">About Us</h5>
           <ul>
             <li className="font-[medium] text-[1.1rem]">Our Story</li>
             <li className="font-[medium] text-[1.1rem]">Blog</li>
@@ -148,7 +148,11 @@ const NavLink = ({ links }: Links) => {
             className={`${link.borderStyle} flex justify-center items-center flex-1 text-center`}
             key={index}
           >
-            <Link to={link.link} className="font-[medium] text-[1.1rem]">
+            <Link
+              to={link.link}
+              className="font-[medium] text-[1.1rem]"
+              preventScrollReset={true}
+            >
               {link.name}
             </Link>
           </li>

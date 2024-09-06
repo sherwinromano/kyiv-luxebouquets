@@ -4,6 +4,7 @@ import productImageTwo from "../../assets/home-page/card-image-2.jpg";
 import productImageThree from "../../assets/home-page/card-image-3.jpg";
 import productImageFour from "../../assets/home-page/card-image-4.jpg";
 import productImageFive from "../../assets/home-page/card-image-5.jpg";
+import useScrollToTop from "../../hooks/useScrollToTop";
 
 type ProductItems = {
   name: string;
@@ -64,6 +65,7 @@ const SectionOne = () => {
     },
   ];
 
+  useScrollToTop();
   return (
     <div className="flex border-b border-black">
       <div className="h-screen sticky top-[3rem] border-r border-black p-[4.5rem] w-1/2 flex flex-col gap-[1.5rem]">

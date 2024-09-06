@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 
 const SectionTwo = () => {
@@ -8,7 +9,7 @@ const SectionTwo = () => {
       </div>
       <div className="w-1/2 p-[4.5rem] flex flex-col gap-4">
         <h4 className="font-[medium] text-base">Our Story</h4>
-        <div>
+        <div className="flex flex-col">
           <h3 className="font-[medium] text-[2rem]">Kyiv LuxeBouquets</h3>
           <p className="font-[regular] text-base mt-2">
             We are a modern local floral studio, which specializes in the design
@@ -23,12 +24,14 @@ const SectionTwo = () => {
             flowers online has never been easier.
           </p>
         </div>
-        <Button
-          buttonStyle={
-            "text-base font-[medium] uppercase self-start border border-black p-3 w-[30%] mt-[2rem]"
-          }
-          buttonLabel={"Learn More"}
-        />
+        <Link className="w-[30%]" to="/about">
+          <Button
+            buttonStyle={
+              "text-base font-[medium] uppercase self-start border border-black p-3 w-full mt-[2rem]"
+            }
+            buttonLabel={"Learn More"}
+          />
+        </Link>
       </div>
     </div>
   );
