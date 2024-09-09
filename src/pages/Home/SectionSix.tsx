@@ -1,7 +1,5 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import Button from "../../components/Button";
 import googleLogo from "../../assets/icons/google-logo.png";
-import { Pagination } from "swiper/modules";
 
 const SectionSix = () => {
   return (
@@ -15,16 +13,7 @@ const SectionSix = () => {
           <h2 className="font-[semibold] text-[3rem] self-center">
             Our Clients say
           </h2>
-          <Swiper
-            modules={[Pagination]}
-            pagination={{ dynamicBullets: true }}
-            slidesPerView={1}
-          >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-          </Swiper>
+          <div>carousel diri</div>
         </div>
       </div>
       <Button

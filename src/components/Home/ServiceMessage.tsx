@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button";
 
 type ServiceMessageProps = {
@@ -7,6 +8,7 @@ type ServiceMessageProps = {
   textWrapperStyle?: string;
   buttonStyle: string;
   buttonLabel: string;
+  link: string;
 };
 
 const ServiceMessage = ({
@@ -16,6 +18,7 @@ const ServiceMessage = ({
   textWrapperStyle,
   buttonStyle,
   buttonLabel,
+  link,
 }: ServiceMessageProps) => {
   return (
     <div className={wrapperStyle}>
@@ -26,7 +29,9 @@ const ServiceMessage = ({
           <p className="text-center font-[medium] text-[1.1rem]">{subtitle}</p>
         </div>
       </div>
-      <Button buttonStyle={buttonStyle} buttonLabel={buttonLabel} />
+      <Link to={link} className="self-center w-[30%]">
+        <Button buttonStyle={buttonStyle} buttonLabel={buttonLabel} />
+      </Link>
     </div>
   );
 };

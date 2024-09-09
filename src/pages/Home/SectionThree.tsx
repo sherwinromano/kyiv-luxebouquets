@@ -1,3 +1,5 @@
+import Cards from "../../components/Cards";
+
 type ChooseUs = {
   title: string;
   body: string;
@@ -31,17 +33,15 @@ const SectionThree = () => {
       <div className="w-1/2">
         {chooseUs.map((item, index) => {
           return (
-            <div
-              className={
-                item.title.includes("Subscription")
+            <Cards
+              cardData={item}
+              cardStyle={
+                index == chooseUs.length - 1
                   ? "p-[4.5rem] flex flex-col gap-4"
                   : "p-[4.5rem] flex flex-col gap-4 border-b border-black"
               }
               key={index}
-            >
-              <h3 className="font-medium text-[1.8rem]">{item.title}</h3>
-              <p className="font-regular text-base">{item.body}</p>
-            </div>
+            />
           );
         })}
       </div>

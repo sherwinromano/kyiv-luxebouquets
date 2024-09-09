@@ -23,9 +23,10 @@ const SectionFive = () => {
               "Experience the convenience and savings of regular flower deliveries with our flexible subscription service - up to 30% more profitable than one-time purchases."
             }
             buttonStyle={
-              "font-[medium] uppercase border-black border py-4 self-center w-[35%]"
+              "font-[medium] uppercase border-black border py-4 w-full"
             }
             buttonLabel={"Subscribe Now"}
+            link="/subscription"
           />
         </div>
       </div>
@@ -38,9 +39,10 @@ const SectionFive = () => {
           }
           textWrapperStyle={"flex flex-col gap-4 text-white"}
           buttonStyle={
-            "font-[medium] uppercase border-white border py-4 self-center w-[35%]"
+            "font-[medium] uppercase border-white border py-4 w-full"
           }
           buttonLabel={"Inquire Now"}
+          link="/"
         />
       </div>
     </div>

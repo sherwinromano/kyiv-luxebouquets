@@ -1,15 +1,18 @@
 import { Link, Outlet } from "react-router-dom";
 import ContactForm from "./components/Home/ContactForm";
 import SocialLinks from "./components/SocialLinks";
+import Modal from "./components/Modal";
+import { Dispatch, SetStateAction, useState } from "react";
 
 type NavLink = {
-  link: string;
+  link?: string;
   name: string;
   borderStyle: string;
 };
 
 type Links = {
   links: NavLink[];
+  toggleModal?: Dispatch<SetStateAction<boolean>>;
 };
 
 const Layout = () => {
@@ -29,7 +32,6 @@ const Layout = () => {
       ],
       navLinkTwo: [
         {
-          link: "/",
           name: "Sign In",
           borderStyle: "border-l border-black",
         },
@@ -41,6 +43,7 @@ const Layout = () => {
       ],
     },
   ];
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   const [{ navLinkOne, navLinkTwo }] = navLinks;
 
@@ -49,11 +52,11 @@ const Layout = () => {
       <header className="sticky top-0 z-50 w-full bg-white border-b border-black h-[4.3rem] flex">
         <nav className="flex justify-between w-full h-full">
           <NavLink links={navLinkOne} />
-          <NavLink links={navLinkTwo} />
+          <NavLink links={navLinkTwo} toggleModal={setOpenModal} />
         </nav>
       </header>
       <Outlet />
-      <footer className="border-t border-black h-[auto] flex">
+      <footer className="border-t border-black h-[auto] flex justify-between">
         <div className="flex flex-col gap-8 border-r border-black p-[2rem] w-1/4">
           <p className="text-base font-[regular]">
             Remember to offer beautiful flowers from Kyiv LuxeBouquets
@@ -135,11 +138,18 @@ const Layout = () => {
           </ul>
         </div>
       </footer>
+      <div className="modal"></div>
+      <Modal
+        openModal={openModal}
+        setOpenModal={(e) => {
+          e.target === e.currentTarget && setOpenModal(false);
+        }}
+      />
     </main>
   );
 };
 
-const NavLink = ({ links }: Links) => {
+const NavLink = ({ links, toggleModal }: Links) => {
   return (
     <ul className="flex w-[25%]">
       {links.map((link, index) => {
@@ -148,13 +158,19 @@ const NavLink = ({ links }: Links) => {
             className={`${link.borderStyle} flex justify-center items-center flex-1 text-center`}
             key={index}
           >
-            <Link
-              to={link.link}
-              className="font-[medium] text-[1.1rem]"
-              preventScrollReset={true}
-            >
-              {link.name}
-            </Link>
+            {link.name == "Sign In" ? (
+              <Link
+                to="/"
+                className="font-[medium] text-[1.1rem]"
+                onClick={() => toggleModal && toggleModal(true)}
+              >
+                Sign In
+              </Link>
+            ) : (
+              <Link to={link.link} className="font-[medium] text-[1.1rem]">
+                {link.name}
+              </Link>
+            )}
           </li>
         );
       })}
